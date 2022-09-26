@@ -13,7 +13,11 @@ import {
 export function Statistics({ stats, title }) {
   return (
     <Container>
-      <Box p={4}>{title && <Title>{title}</Title>}</Box>
+      {title && (
+        <Box p={4}>
+          <Title>{title}</Title>
+        </Box>
+      )}
 
       <Box as="ul" display="flex">
         {stats.map(({ id, label, percentage }) => (
