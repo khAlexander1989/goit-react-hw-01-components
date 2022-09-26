@@ -13,7 +13,13 @@ import {
 } from './Profile.styled';
 
 export function Profile(props) {
-  const { username, tag, location, avatarUrl, followers, views, likes } = props;
+  const {
+    username,
+    tag,
+    location,
+    avatarUrl,
+    stats: { followers, views, likes },
+  } = props;
 
   return (
     <Container>
@@ -47,7 +53,9 @@ Profile.propTypes = {
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatarUrl: PropTypes.string.isRequired,
-  followers: PropTypes.number.isRequired,
-  views: PropTypes.number.isRequired,
-  likes: PropTypes.number.isRequired,
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }),
 };
