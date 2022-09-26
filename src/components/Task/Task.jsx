@@ -20,4 +20,5 @@ export function Task({ title, children }) {
 
 Task.propTypes = {
   title: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.node]),
 };
